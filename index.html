@@ -46,17 +46,12 @@
         font-weight: 400;
         overflow-x: hidden;
       }
-
-      /* ══════════════════════════════════════
-         BACKGROUND SLIDESHOW
-      ══════════════════════════════════════ */
       .bg-slideshow {
         position: fixed;
         inset: 0;
         z-index: 0;
         pointer-events: none;
       }
-      /* สองชั้นสำหรับ crossfade */
       .bg-slide {
         position: absolute;
         inset: 0;
@@ -69,7 +64,6 @@
       .bg-slide.active {
         opacity: 1;
       }
-      /* Overlay เพื่อให้ตัวหนังสืออ่านได้ชัด */
       .bg-overlay {
         position: fixed;
         inset: 0;
@@ -82,8 +76,6 @@
           rgba(7, 16, 30, 0.8) 100%
         );
       }
-
-      /* Ambient gradient */
       body::after {
         content: "";
         position: fixed;
@@ -102,8 +94,6 @@
             transparent 55%
           );
       }
-
-      /* Grain texture */
       body::before {
         content: "";
         position: fixed;
@@ -122,7 +112,6 @@
         z-index: 1;
       }
 
-      /* ─────────── NAV ─────────── */
       nav {
         position: fixed;
         top: 0;
@@ -187,8 +176,6 @@
         opacity: 0.87;
         box-shadow: 0 4px 22px var(--orange-glo);
       }
-
-      /* ─────────── HERO ─────────── */
       .hero {
         min-height: 100vh;
         display: flex;
@@ -251,7 +238,6 @@
         animation: rise 0.9s 0.15s ease both;
       }
 
-      /* ─────────── NEXT FLIGHT CARD ─────────── */
       .nf-wrap {
         margin-top: 60px;
         width: 100%;
@@ -387,7 +373,6 @@
         color: var(--orange);
       }
 
-      /* ─────────── COUNTDOWN ─────────── */
       .cd-wrap {
         margin-top: 52px;
         animation: rise 0.9s 0.33s ease both;
@@ -491,7 +476,6 @@
         }
       }
 
-      /* ─────────── ABOUT / STATS ─────────── */
       .about-sec {
         padding: 110px 56px;
         max-width: 1160px;
@@ -566,7 +550,6 @@
         color: var(--orange);
       }
 
-      /* ── Stat number loading animation ── */
       .sn.loading-pulse {
         animation: statpulse 1.2s ease-in-out infinite;
       }
@@ -587,7 +570,7 @@
         line-height: 1.5;
       }
 
-      /* ─────────── SCHEDULE ─────────── */
+
       .sched-sec {
         padding: 80px 56px;
         max-width: 1160px;
@@ -930,7 +913,6 @@
     </div>
     <div class="bg-overlay"></div>
 
-    <!-- ═══════ NAVIGATION ═══════ -->
     <nav>
       <a
         href="#"
@@ -967,7 +949,6 @@
       </button>
     </nav>
 
-    <!-- ═══════ HERO ═══════ -->
     <section class="hero" id="home">
       <div class="hero-eyebrow">
         <div class="live-dot"></div>
@@ -988,7 +969,7 @@
         every second challenges what you thought was possible.
       </p>
 
-      <!-- ─── NEXT FLIGHT ─── -->
+
       <div class="nf-wrap" id="flights">
         <div class="eyebrow">Next Scheduled Flight</div>
         <div class="flight-card">
@@ -1027,7 +1008,6 @@
         </div>
       </div>
 
-      <!-- ─── COUNTDOWN ─── -->
       <div class="cd-wrap">
         <div class="eyebrow">Time Until Next Departure</div>
         <div class="cd-row">
@@ -1060,7 +1040,6 @@
     </section>
     <hr class="rule" />
 
-    <!-- ═══════ ABOUT + STATS ═══════ -->
     <section class="about-sec" id="about">
       <div class="about-grid">
         <div class="reveal">
@@ -1102,7 +1081,6 @@
     </section>
     <hr class="rule" />
 
-    <!-- ═══════ SCHEDULE ═══════ -->
     <section class="sched-sec" id="schedule">
       <h2 class="sec-title reveal">Flight <span>Schedule</span></h2>
       <div style="margin-top: 36px">
@@ -1213,7 +1191,6 @@
       </div>
     </section>
 
-    <!-- ═══════ FOOTER ═══════ -->
     <footer>
       <div>
         <img
@@ -1241,26 +1218,10 @@
     </footer>
 
     <script>
-      /* ════════════════════════════════════════════════════════════════
-       ██████╗  ██████╗     ███████╗██╗     ██╗██████╗ ███████╗
-       ██╔══██╗██╔════╝     ██╔════╝██║     ██║██╔══██╗██╔════╝
-       ██████╔╝██║  ███╗    ███████╗██║     ██║██║  ██║█████╗
-       ██╔══██╗██║   ██║    ╚════██║██║     ██║██║  ██║██╔══╝
-       ██████╔╝╚██████╔╝    ███████║███████╗██║██████╔╝███████╗
-       ╚═════╝  ╚═════╝     ╚══════╝╚══════╝╚═╝╚═════╝ ╚══════╝
-    ════════════════════════════════════════════════════════════════ */
-
-      /* ══════════════════════════════════════════════════════════════
-       1. BACKGROUND SLIDESHOW — เพิ่ม/ลบรูปได้ตรงนี้เลย!
-          ใส่ URL รูปภาพในลิสต์นี้
-          - ใช้รูปที่ host อยู่บน internet ก็ได้
-          - หรือใส่ path รูปในโฟลเดอร์เดียวกับ index.html ก็ได้ เช่น "./photo1.jpg"
-    ══════════════════════════════════════════════════════════════ */
       const BG_IMAGES = [
-        /* ▼▼▼ เพิ่ม/ลบ/เปลี่ยน URL รูปตรงนี้ ▼▼▼ */
-        "./BG/1.jpg", // ← เปลี่ยนเป็น URL หรือ path รูปจริงๆ
-        "./BG/2.jpg", // ← เพิ่มได้ไม่จำกัด
-        "./BG/3.jpg", // ← ลบบรรทัดนี้ถ้าไม่มีรูปที่ 3
+        "./BG/1.jpg",
+        "./BG/2.jpg",
+        "./BG/3.jpg",
         "./BG/4.jpg",
         "./BG/5.jpg",
         "./BG/6.jpg",
@@ -1269,13 +1230,11 @@
         "./BG/9.jpg",
         "./BG/10.jpg",
         "./BG/11.jpg",
-        /* ▲▲▲ ตัวอย่าง URL จาก internet: "https://example.com/sky.jpg" ▲▲▲ */
       ];
 
-      const BG_INTERVAL = 6000; // เปลี่ยนรูปทุก 6 วินาที (หน่วย: millisecond)
-      const BG_FADE = 1800; // ความเร็ว fade (ต้องตรงกับ CSS transition ด้านบน)
+      const BG_INTERVAL = 6000;
+      const BG_FADE = 1800;
 
-      /* ── Slideshow logic (ไม่ต้องแก้) ── */
       (function initSlideshow() {
         if (!BG_IMAGES.length) return;
         const elA = document.getElementById("bg-a");
@@ -1303,46 +1262,31 @@
           });
         }
 
-        /* แสดงรูปแรกทันที */
         showSlide(cur);
 
-        /* วนรูปอัตโนมัติ */
         setInterval(() => {
           cur = (cur + 1) % BG_IMAGES.length;
           showSlide(cur);
         }, BG_INTERVAL);
       })();
 
-      /* ══════════════════════════════════════════════════════════════
-       2. GOOGLE SHEETS — ดึงตัวเลข Flights Operated & Certified Crew
-
-       วิธี Publish Sheet:
-         Google Sheets → File → Share → Publish to web
-         → เลือก Sheet ที่ต้องการ → เลือก "Comma-separated values (.csv)"
-         → กด Publish → Copy URL → ใส่ในตัวแปร GSHEET_CSV_URL ด้านล่าง
-    ══════════════════════════════════════════════════════════════ */
       const GSHEET_CSV_URL =
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCrpoLm7IAmcw9lkg1-Y7QFAiJriT-gVCVsk-pf2ifu-gLOi6uN7g1ovPbxa2-JkX6Z407Y6zId1RW/pub?gid=0&single=true&output=csv"; /* ◄── วาง URL ที่ได้จาก Google Sheets ตรงนี้ (ระหว่าง " " )
-              ตัวอย่าง: "https://docs.google.com/spreadsheets/d/e/2PACX-1v.../pub?output=csv" */
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCrpoLm7IAmcw9lkg1-Y7QFAiJriT-gVCVsk-pf2ifu-gLOi6uN7g1ovPbxa2-JkX6Z407Y6zId1RW/pub?gid=0&single=true&output=csv";
 
       async function fetchSheetStats() {
         if (!GSHEET_CSV_URL) {
-          /* ถ้ายังไม่ได้ใส่ URL ให้แสดง 0 ไปก่อน */
+
           setStatValue("stat-flights", "0");
           setStatValue("stat-crew", "0");
           return;
         }
         try {
-          /* เพิ่ม timestamp เพื่อป้องกัน browser cache */
+
           const url = GSHEET_CSV_URL + "&_t=" + Date.now();
           const res = await fetch(url);
           if (!res.ok) throw new Error("Sheet fetch failed: " + res.status);
           const csv = await res.text();
 
-          /* CSV มีหน้าตาแบบนี้:
-           "Flights Operated:",0
-           "Certified Crew:",0
-        */
           const rows = csv
             .trim()
             .split("\n")
@@ -1352,7 +1296,7 @@
 
           rows.forEach((cols) => {
             const label = (cols[0] || "").toLowerCase();
-            const val = (cols[1] || "").replace(/[^0-9]/g, ""); // เอาแค่ตัวเลข
+            const val = (cols[1] || "").replace(/[^0-9]/g, ""); 
             if (
               label.includes("flights operated") ||
               label.includes("flight")
@@ -1374,16 +1318,12 @@
         const el = document.getElementById(id);
         if (!el) return;
         el.textContent = val;
-        el.classList.remove("loading-pulse"); /* หยุด animation กระพริบ */
+        el.classList.remove("loading-pulse");
       }
 
-      /* รีเฟรชทุก 5 นาที (แก้ตัวเลขได้ — หน่วย millisecond) */
       fetchSheetStats();
       setInterval(fetchSheetStats, 5 * 60 * 1000);
 
-      /* ══════════════════════════════════════════════════════════════
-       3. TRELLO CONFIG
-    ══════════════════════════════════════════════════════════════ */
       const TRELLO_KEY = "f1b6c262d5ab7eebe9e414b62e11a0e0";
       const TRELLO_TOKEN =
         "ATTAc03444cbfc80d91f8c21fcc42f904f7a7a49c5c47e9335c70b838ba60f10b2972E600F2B";
@@ -1395,7 +1335,7 @@
         "Cancelled Flights": "cancelled",
       };
 
-      /* ── Countdown ── */
+
       let _target = null;
       function tick() {
         if (!_target) {
@@ -1432,7 +1372,6 @@
       }
       setInterval(tick, 1000);
 
-      /* ── Trello Fetch ── */
       async function fetchFlights() {
         if (!TRELLO_KEY || !TRELLO_TOKEN || !TRELLO_BOARD) {
           setStatus("err", "No config");
@@ -1589,7 +1528,6 @@
         return s.charAt(0).toUpperCase() + s.slice(1);
       }
 
-      /* ── Scroll Reveal ── */
       function triggerReveal() {
         const io = new IntersectionObserver(
           (entries) => {
@@ -1607,7 +1545,6 @@
           .forEach((el) => io.observe(el));
       }
 
-      /* ── Init ── */
       fetchFlights();
       triggerReveal();
     </script>
