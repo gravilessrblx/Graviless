@@ -46,6 +46,7 @@
         font-weight: 400;
         overflow-x: hidden;
       }
+
       .bg-slideshow {
         position: fixed;
         inset: 0;
@@ -76,6 +77,7 @@
           rgba(7, 16, 30, 0.8) 100%
         );
       }
+
       body::after {
         content: "";
         position: fixed;
@@ -83,17 +85,10 @@
         z-index: 0;
         pointer-events: none;
         background:
-          radial-gradient(
-            ellipse 90% 55% at 50% -5%,
-            rgba(26, 43, 110, 0.45) 0%,
-            transparent 65%
-          ),
-          radial-gradient(
-            ellipse 45% 35% at 88% 85%,
-            rgba(240, 112, 64, 0.06) 0%,
-            transparent 55%
-          );
+          radial-gradient(ellipse 90% 55% at 50% -5%, rgba(26, 43, 110, 0.45) 0%, transparent 65%),
+          radial-gradient(ellipse 45% 35% at 88% 85%, rgba(240, 112, 64, 0.06) 0%, transparent 55%);
       }
+
       body::before {
         content: "";
         position: fixed;
@@ -104,19 +99,11 @@
         opacity: 0.6;
       }
 
-      nav,
-      section,
-      footer,
-      main {
-        position: relative;
-        z-index: 1;
-      }
+      nav, section, footer, main { position: relative; z-index: 1; }
 
       nav {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         z-index: 100;
         display: flex;
         align-items: center;
@@ -127,778 +114,239 @@
         backdrop-filter: blur(18px);
         border-bottom: 1px solid var(--border);
       }
-      .nav-logo img {
-        height: 30px;
-        width: auto;
-        display: block;
-      }
+      .nav-logo img { height: 30px; width: auto; display: block; }
       .nav-logo-fallback {
         display: none;
         font-family: "Bricolage Grotesque", sans-serif;
-        font-weight: 800;
-        font-size: 18px;
-        letter-spacing: 0.5px;
-        color: #fff;
+        font-weight: 800; font-size: 18px; letter-spacing: 0.5px; color: #fff;
       }
-      .nav-logo-fallback span {
-        color: var(--orange);
-      }
-      .nav-links {
-        display: flex;
-        gap: 38px;
-        list-style: none;
-      }
+      .nav-logo-fallback span { color: var(--orange); }
+      .nav-links { display: flex; gap: 38px; list-style: none; }
       .nav-links a {
-        color: var(--muted);
-        text-decoration: none;
-        font-size: 13.5px;
-        font-weight: 500;
-        transition: color 0.2s;
+        color: var(--muted); text-decoration: none;
+        font-size: 13.5px; font-weight: 500; transition: color 0.2s;
       }
-      .nav-links a:hover {
-        color: var(--text);
-      }
+      .nav-links a:hover { color: var(--text); }
       .nav-btn {
-        background: var(--orange);
-        color: #fff;
-        border: none;
-        padding: 10px 22px;
-        border-radius: 8px;
+        background: var(--orange); color: #fff; border: none;
+        padding: 10px 22px; border-radius: 8px;
         font-family: "Plus Jakarta Sans", sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        transition:
-          opacity 0.2s,
-          box-shadow 0.2s;
+        font-size: 13px; font-weight: 600; cursor: pointer;
+        transition: opacity 0.2s, box-shadow 0.2s;
       }
-      .nav-btn:hover {
-        opacity: 0.87;
-        box-shadow: 0 4px 22px var(--orange-glo);
-      }
+      .nav-btn:hover { opacity: 0.87; box-shadow: 0 4px 22px var(--orange-glo); }
+
       .hero {
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
         text-align: center;
         padding: 140px 40px 110px;
         gap: 0;
       }
       .hero-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--orange);
+        display: inline-flex; align-items: center; gap: 9px;
+        font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+        text-transform: uppercase; color: var(--orange);
         margin-bottom: 34px;
         animation: rise 0.9s ease both;
       }
       .live-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
+        width: 7px; height: 7px; border-radius: 50%;
         background: var(--orange);
         animation: blink 2.4s ease-in-out infinite;
       }
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.2;
-        }
-      }
+      @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.2} }
 
       .hero-title {
         font-family: "Bricolage Grotesque", sans-serif;
         font-size: clamp(54px, 9vw, 124px);
-        font-weight: 800;
-        line-height: 0.92;
-        letter-spacing: -3px;
+        font-weight: 800; line-height: 0.92; letter-spacing: -3px;
         color: var(--text);
         animation: rise 0.9s 0.07s ease both;
       }
-      .hero-title .o {
-        color: var(--orange);
-      }
-
+      .hero-title .o { color: var(--orange); }
       .hero-sub {
-        max-width: 700px;
-        font-size: 16px;
-        line-height: 1.78;
-        color: var(--muted);
-        font-weight: 300;
+        max-width: 700px; font-size: 16px; line-height: 1.78;
+        color: var(--muted); font-weight: 300;
         margin: 28px auto 0;
         animation: rise 0.9s 0.15s ease both;
       }
 
-      .nf-wrap {
-        margin-top: 60px;
-        width: 100%;
-        max-width: 680px;
-        animation: rise 0.9s 0.24s ease both;
-      }
+      .nf-wrap { margin-top: 60px; width: 100%; max-width: 680px; animation: rise 0.9s 0.24s ease both; }
       .eyebrow {
-        font-size: 10px;
-        font-weight: 600;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--dim);
-        margin-bottom: 13px;
+        font-size: 10px; font-weight: 600; letter-spacing: 2.5px;
+        text-transform: uppercase; color: var(--dim); margin-bottom: 13px;
       }
       .flight-card {
-        background: var(--bg-3);
-        border: 1px solid var(--border);
-        border-top: 2px solid var(--orange);
-        border-radius: var(--r);
+        background: var(--bg-3); border: 1px solid var(--border);
+        border-top: 2px solid var(--orange); border-radius: var(--r);
         padding: 30px 34px 26px;
       }
-      .fc-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 22px;
-      }
+      .fc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
       .status-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        padding: 5px 13px;
-        border-radius: 100px;
-        background: rgba(45, 210, 100, 0.1);
-        color: #2dd264;
-        border: 1px solid rgba(45, 210, 100, 0.22);
+        display: inline-flex; align-items: center; gap: 7px;
+        font-size: 11px; font-weight: 600; letter-spacing: 1px;
+        text-transform: uppercase; padding: 5px 13px; border-radius: 100px;
+        background: rgba(45,210,100,0.1); color: #2dd264;
+        border: 1px solid rgba(45,210,100,0.22);
       }
-      .status-pill.loading {
-        background: var(--orange-dim);
-        color: var(--orange);
-        border-color: var(--border-o);
-      }
-      .status-pill.err {
-        background: rgba(255, 65, 90, 0.1);
-        color: #ff415a;
-        border-color: rgba(255, 65, 90, 0.22);
-      }
-      .pdot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: currentColor;
-        animation: blink 1.8s infinite;
-      }
-      .status-pill.err .pdot {
-        animation: none;
-      }
-      .fc-fnum {
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--muted);
-        letter-spacing: 1.5px;
-      }
-      .fc-fnum strong {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-weight: 700;
-        font-size: 14px;
-        color: var(--text);
-        letter-spacing: 2px;
-      }
-      .fc-dep {
-        display: flex;
-        align-items: flex-end;
-        gap: 16px;
-        margin-bottom: 22px;
-      }
-      .dep-code {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 58px;
-        font-weight: 800;
-        line-height: 1;
-        letter-spacing: -2px;
-        color: var(--text);
-      }
-      .dep-info {
-        padding-bottom: 7px;
-      }
-      .dep-name {
-        font-size: 13.5px;
-        color: var(--muted);
-      }
-      .dep-note {
-        font-size: 11px;
-        color: var(--dim);
-        margin-top: 3px;
-      }
-      .fc-meta {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        border-top: 1px solid var(--border);
-        padding-top: 20px;
-        gap: 0;
-      }
-      .mc {
-        padding: 0 16px 0 0;
-      }
-      .mc + .mc {
-        padding-left: 16px;
-        border-left: 1px solid var(--border);
-      }
-      .mc:last-child {
-        padding-right: 0;
-      }
-      .mc-lbl {
-        font-size: 9px;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--dim);
-        margin-bottom: 6px;
-      }
-      .mc-val {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--text);
-      }
-      .mc-val.ac {
-        color: var(--orange);
-      }
+      .status-pill.loading { background: var(--orange-dim); color: var(--orange); border-color: var(--border-o); }
+      .status-pill.err { background: rgba(255,65,90,0.1); color: #ff415a; border-color: rgba(255,65,90,0.22); }
+      .pdot { width:6px;height:6px;border-radius:50%;background:currentColor;animation:blink 1.8s infinite; }
+      .status-pill.err .pdot { animation: none; }
+      .fc-fnum { font-size:12px;font-weight:500;color:var(--muted);letter-spacing:1.5px; }
+      .fc-fnum strong { font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:14px;color:var(--text);letter-spacing:2px; }
+      .fc-dep { display:flex;align-items:flex-end;gap:16px;margin-bottom:22px; }
+      .dep-code { font-family:"Bricolage Grotesque",sans-serif;font-size:58px;font-weight:800;line-height:1;letter-spacing:-2px;color:var(--text); }
+      .dep-info { padding-bottom:7px; }
+      .dep-name { font-size:13.5px;color:var(--muted); }
+      .dep-note { font-size:11px;color:var(--dim);margin-top:3px; }
+      .fc-meta { display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);padding-top:20px;gap:0; }
+      .mc { padding:0 16px 0 0; }
+      .mc+.mc { padding-left:16px;border-left:1px solid var(--border); }
+      .mc:last-child { padding-right:0; }
+      .mc-lbl { font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:6px; }
+      .mc-val { font-family:"Bricolage Grotesque",sans-serif;font-size:16px;font-weight:700;color:var(--text); }
+      .mc-val.ac { color:var(--orange); }
 
-      .cd-wrap {
-        margin-top: 52px;
-        animation: rise 0.9s 0.33s ease both;
-      }
-      .cd-row {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 18px;
-      }
-      .cd-unit {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+      .cd-wrap { margin-top:52px;animation:rise 0.9s 0.33s ease both; }
+      .cd-row { display:flex;align-items:flex-start;justify-content:center;gap:8px;margin-top:18px; }
+      .cd-unit { display:flex;flex-direction:column;align-items:center; }
       .cd-box {
-        width: 86px;
-        height: 80px;
-        background: var(--bg-3);
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 36px;
-        font-weight: 700;
-        color: var(--text);
-        transition:
-          border-color 0.2s,
-          color 0.2s;
+        width:86px;height:80px;background:var(--bg-3);border:1px solid var(--border);
+        border-radius:var(--r);display:flex;align-items:center;justify-content:center;
+        font-family:"Bricolage Grotesque",sans-serif;font-size:36px;font-weight:700;color:var(--text);
+        transition:border-color 0.2s,color 0.2s;
       }
-      .cd-box.flash {
-        border-color: var(--orange);
-        color: var(--orange);
-      }
-      .cd-lbl {
-        font-size: 9px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--dim);
-        margin-top: 7px;
-      }
-      .cd-sep {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 30px;
-        color: var(--dim);
-        line-height: 80px;
-        animation: sep 1s step-start infinite;
-      }
-      @keyframes sep {
-        0%,
-        49% {
-          opacity: 0.4;
-        }
-        50%,
-        100% {
-          opacity: 0.08;
-        }
-      }
+      .cd-box.flash { border-color:var(--orange);color:var(--orange); }
+      .cd-lbl { font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-top:7px; }
+      .cd-sep { font-family:"Bricolage Grotesque",sans-serif;font-size:30px;color:var(--dim);line-height:80px;animation:sep 1s step-start infinite; }
+      @keyframes sep { 0%,49%{opacity:0.4}50%,100%{opacity:0.08} }
 
       .scroll-cue {
-        margin-top: 68px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 9px;
-        color: var(--dim);
-        font-size: 9.5px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        animation: rise 1s 0.8s ease both;
+        margin-top:68px;display:flex;flex-direction:column;align-items:center;gap:9px;
+        color:var(--dim);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;
+        animation:rise 1s 0.8s ease both;
       }
       .scroll-cue-line {
-        width: 1px;
-        height: 42px;
-        background: linear-gradient(to bottom, var(--orange), transparent);
-        animation: dropline 2.2s ease-in-out infinite;
+        width:1px;height:42px;
+        background:linear-gradient(to bottom,var(--orange),transparent);
+        animation:dropline 2.2s ease-in-out infinite;
       }
       @keyframes dropline {
-        0% {
-          transform: scaleY(0);
-          transform-origin: top;
-          opacity: 1;
-        }
-        48% {
-          transform: scaleY(1);
-          transform-origin: top;
-          opacity: 1;
-        }
-        52% {
-          transform: scaleY(1);
-          transform-origin: bottom;
-          opacity: 1;
-        }
-        100% {
-          transform: scaleY(0);
-          transform-origin: bottom;
-          opacity: 0;
-        }
+        0%{transform:scaleY(0);transform-origin:top;opacity:1}
+        48%{transform:scaleY(1);transform-origin:top;opacity:1}
+        52%{transform:scaleY(1);transform-origin:bottom;opacity:1}
+        100%{transform:scaleY(0);transform-origin:bottom;opacity:0}
       }
 
-      .about-sec {
-        padding: 110px 56px;
-        max-width: 1160px;
-        margin: 0 auto;
-      }
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 80px;
-        align-items: center;
-      }
-      .tag {
-        font-size: 10.5px;
-        font-weight: 600;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--orange);
-        margin-bottom: 20px;
-      }
-      .sec-title {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: clamp(30px, 3.8vw, 52px);
-        font-weight: 800;
-        line-height: 1.15;
-        letter-spacing: -1px;
-        color: var(--text);
-        margin-bottom: 0;
-      }
-      .sec-title span {
-        color: var(--orange);
-      }
-      .about-body {
-        color: var(--muted);
-        font-size: 15.5px;
-        line-height: 1.8;
-        margin-top: 22px;
-        font-weight: 300;
-      }
+      .about-sec { padding:110px 56px;max-width:1160px;margin:0 auto; }
+      .about-grid { display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:center; }
+      .tag { font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:20px; }
+      .sec-title { font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(30px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-1px;color:var(--text); }
+      .sec-title span { color:var(--orange); }
+      .about-body { color:var(--muted);font-size:15.5px;line-height:1.8;margin-top:22px;font-weight:300; }
 
-      .stats-block {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        overflow: hidden;
-      }
-      .sc {
-        padding: 30px 26px;
-        border-right: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        transition: background 0.25s;
-      }
-      .sc:nth-child(even) {
-        border-right: none;
-      }
-      .sc:nth-child(3),
-      .sc:nth-child(4) {
-        border-bottom: none;
-      }
-      .sc:hover {
-        background: rgba(240, 112, 64, 0.04);
-      }
-      .sn {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 40px;
-        font-weight: 800;
-        color: var(--text);
-        line-height: 1;
-      }
-      .sn sup {
-        font-size: 20px;
-        color: var(--orange);
-      }
+      .stats-block { display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:var(--r);overflow:hidden; }
+      .sc { padding:30px 26px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.25s; }
+      .sc:nth-child(even) { border-right:none; }
+      .sc:nth-child(3),.sc:nth-child(4) { border-bottom:none; }
+      .sc:hover { background:rgba(240,112,64,0.04); }
+      .sn { font-family:"Bricolage Grotesque",sans-serif;font-size:40px;font-weight:800;color:var(--text);line-height:1; }
+      .sn sup { font-size:20px;color:var(--orange); }
+      .sn.loading-pulse { animation:statpulse 1.2s ease-in-out infinite; }
+      @keyframes statpulse { 0%,100%{opacity:1}50%{opacity:0.35} }
+      .sd { font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5; }
 
-      .sn.loading-pulse {
-        animation: statpulse 1.2s ease-in-out infinite;
-      }
-      @keyframes statpulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.35;
-        }
-      }
-
-      .sd {
-        font-size: 12px;
-        color: var(--muted);
-        margin-top: 7px;
-        line-height: 1.5;
-      }
-
-
-      .sched-sec {
-        padding: 80px 56px;
-        max-width: 1160px;
-        margin: 0 auto;
-      }
-      .sched-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
+      .sched-sec { padding:80px 56px;max-width:1160px;margin:0 auto; }
+      .sched-list { display:flex;flex-direction:column;gap:10px; }
       .srow {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: var(--bg-3);
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        padding: 20px 28px;
-        transition:
-          border-color 0.2s,
-          transform 0.2s;
+        display:flex;align-items:center;justify-content:space-between;
+        background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r);
+        padding:20px 28px;
+        transition:border-color 0.2s,transform 0.2s;
       }
-      .srow:hover {
-        border-color: var(--border-o);
-        transform: translateX(3px);
-      }
-      .srow.is-next {
-        border-left: 3px solid var(--orange);
-        padding-left: 25px;
-      }
-      .srow.is-done {
-        opacity: 0.4;
-      }
-      .sl {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-      .sfn {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--orange);
-        letter-spacing: 1.5px;
-        min-width: 56px;
-      }
-      .sroute {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--text);
-      }
-      .sac {
-        font-size: 12px;
-        color: var(--muted);
-        margin-top: 2px;
-      }
-      .sr {
-        display: flex;
-        align-items: center;
-        gap: 26px;
-      }
-      .stc {
-        text-align: right;
-      }
-      .stime {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 19px;
-        font-weight: 700;
-        color: var(--text);
-      }
-      .sdate {
-        font-size: 11.5px;
-        color: var(--muted);
-        margin-top: 2px;
-      }
-      .stag {
-        font-size: 10px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        padding: 5px 12px;
-        border-radius: 100px;
-      }
-      .stag.upcoming {
-        background: var(--orange-dim);
-        color: var(--orange);
-        border: 1px solid var(--border-o);
-      }
-      .stag.completed {
-        background: rgba(45, 210, 100, 0.08);
-        color: #2dd264;
-        border: 1px solid rgba(45, 210, 100, 0.2);
-      }
-      .stag.cancelled {
-        background: rgba(255, 65, 90, 0.08);
-        color: #ff415a;
-        border: 1px solid rgba(255, 65, 90, 0.2);
-      }
-      .sempty {
-        padding: 56px;
-        text-align: center;
-        color: var(--dim);
-        font-size: 14px;
-      }
+      .srow:hover { border-color:var(--border-o);transform:translateX(3px); }
+      .srow.is-next { border-left:3px solid var(--orange);padding-left:25px; }
+      .srow.is-done { opacity:0.4; }
+      .sl { display:flex;align-items:center;gap:24px; }
+      .sfn { font-family:"Bricolage Grotesque",sans-serif;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:1.5px;min-width:56px; }
+      .sroute { font-size:16px;font-weight:500;color:var(--text); }
+      .sac { font-size:12px;color:var(--muted);margin-top:2px; }
+      .sr { display:flex;align-items:center;gap:26px; }
+      .stc { text-align:right; }
+      .stime { font-family:"Bricolage Grotesque",sans-serif;font-size:19px;font-weight:700;color:var(--text); }
+      .sdate { font-size:11.5px;color:var(--muted);margin-top:2px; }
+      .stag { font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:100px; }
+      .stag.upcoming { background:var(--orange-dim);color:var(--orange);border:1px solid var(--border-o); }
+      .stag.completed { background:rgba(45,210,100,0.08);color:#2dd264;border:1px solid rgba(45,210,100,0.2); }
+      .stag.cancelled { background:rgba(255,65,90,0.08);color:#ff415a;border:1px solid rgba(255,65,90,0.2); }
+      .sempty { padding:56px;text-align:center;color:var(--dim);font-size:14px; }
 
-      hr.rule {
-        border: none;
-        border-top: 1px solid var(--border);
-      }
+      hr.rule { border:none;border-top:1px solid var(--border); }
 
-      /* ─────────── TEAM ─────────── */
-      .team-sec {
-        padding: 100px 56px;
-        border-top: 1px solid var(--border);
-      }
-      .team-inner {
-        max-width: 1160px;
-        margin: 0 auto;
-      }
-      .team-hdr {
-        margin-bottom: 56px;
-      }
-      .leaders {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-        margin-bottom: 16px;
-      }
-      .hods {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-      }
+      .team-sec { padding:100px 56px;border-top:1px solid var(--border); }
+      .team-inner { max-width:1160px;margin:0 auto; }
+      .team-hdr { margin-bottom:56px; }
+      .leaders { display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px; }
+      .hods { display:grid;grid-template-columns:repeat(4,1fr);gap:16px; }
       .tc {
-        background: var(--bg-3);
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        padding: 30px 22px 26px;
-        transition:
-          border-color 0.25s,
-          transform 0.25s;
-        position: relative;
-        overflow: hidden;
+        background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r);
+        padding:30px 22px 26px;
+        transition:border-color 0.25s,transform 0.25s;
+        position:relative;overflow:hidden;
       }
       .tc::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: var(--orange);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s;
+        content:"";position:absolute;top:0;left:0;right:0;height:2px;
+        background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;
       }
-      .tc:hover {
-        border-color: var(--border-o);
-        transform: translateY(-5px);
-      }
-      .tc:hover::after {
-        transform: scaleX(1);
-      }
+      .tc:hover { border-color:var(--border-o);transform:translateY(-5px); }
+      .tc:hover::after { transform:scaleX(1); }
       .ta {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--navy), var(--navy-lt));
-        border: 2px solid var(--border);
-        margin-bottom: 16px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 19px;
-        font-weight: 700;
-        color: var(--muted);
-        transition: border-color 0.25s;
+        width:70px;height:70px;border-radius:50%;
+        background:linear-gradient(135deg,var(--navy),var(--navy-lt));
+        border:2px solid var(--border);margin-bottom:16px;overflow:hidden;
+        display:flex;align-items:center;justify-content:center;
+        font-family:"Bricolage Grotesque",sans-serif;font-size:19px;font-weight:700;color:var(--muted);
+        transition:border-color 0.25s;
       }
-      .tc:hover .ta {
-        border-color: var(--orange);
-      }
-      .ta img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        display: none;
-      }
-      .ta img.loaded {
-        display: block;
-      }
-      .tn {
-        font-family: "Bricolage Grotesque", sans-serif;
-        font-size: 15.5px;
-        font-weight: 700;
-        color: var(--text);
-        margin-bottom: 4px;
-      }
-      .tr {
-        font-size: 10.5px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--orange);
-      }
-      .tu {
-        font-size: 12px;
-        color: var(--dim);
-        margin-top: 5px;
-      }
+      .tc:hover .ta { border-color:var(--orange); }
+      .ta img { width:100%;height:100%;object-fit:cover;border-radius:50%;display:none; }
+      .ta img.loaded { display:block; }
+      .tn { font-family:"Bricolage Grotesque",sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:4px; }
+      .tr { font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange); }
+      .tu { font-size:12px;color:var(--dim);margin-top:5px; }
 
-      /* ─────────── FOOTER ─────────── */
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 42px 56px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .footer-logo img {
-        height: 24px;
-        width: auto;
-        opacity: 0.65;
-      }
-      .fcopy {
-        font-size: 12px;
-        color: var(--dim);
-      }
-      .flinks {
-        display: flex;
-        gap: 26px;
-      }
-      .flinks a {
-        font-size: 12px;
-        color: var(--muted);
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      .flinks a:hover {
-        color: var(--orange);
-      }
+      footer { border-top:1px solid var(--border);padding:42px 56px;display:flex;align-items:center;justify-content:space-between; }
+      .footer-logo img { height:24px;width:auto;opacity:0.65; }
+      .fcopy { font-size:12px;color:var(--dim); }
+      .flinks { display:flex;gap:26px; }
+      .flinks a { font-size:12px;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+      .flinks a:hover { color:var(--orange); }
 
-      /* ─────────── ANIMATIONS ─────────── */
-      @keyframes rise {
-        from {
-          opacity: 0;
-          transform: translateY(22px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .reveal {
-        opacity: 0;
-        transform: translateY(18px);
-        transition:
-          opacity 0.55s ease,
-          transform 0.55s ease;
-      }
-      .reveal.vis {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      @keyframes rise { from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)} }
+      .reveal { opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease; }
+      .reveal.vis { opacity:1;transform:translateY(0); }
 
-      /* ─────────── RESPONSIVE ─────────── */
-      @media (max-width: 960px) {
-        nav {
-          padding: 0 24px;
-        }
-        .nav-links {
-          display: none;
-        }
-        .about-sec,
-        .sched-sec {
-          padding: 64px 24px;
-        }
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: 48px;
-        }
-        .team-sec {
-          padding: 64px 24px;
-        }
-        .leaders {
-          grid-template-columns: 1fr 1fr;
-        }
-        .hods {
-          grid-template-columns: 1fr 1fr;
-        }
-        footer {
-          flex-direction: column;
-          gap: 18px;
-          text-align: center;
-        }
-        .flinks {
-          display: none;
-        }
+      @media (max-width:960px) {
+        nav { padding:0 24px; }
+        .nav-links { display:none; }
+        .about-sec,.sched-sec { padding:64px 24px; }
+        .about-grid { grid-template-columns:1fr;gap:48px; }
+        .team-sec { padding:64px 24px; }
+        .leaders,.hods { grid-template-columns:1fr 1fr; }
+        footer { flex-direction:column;gap:18px;text-align:center; }
+        .flinks { display:none; }
       }
-      @media (max-width: 560px) {
-        .hero {
-          padding: 120px 22px 80px;
-        }
-        .hero-title {
-          letter-spacing: -1.5px;
-        }
-        .fc-meta {
-          grid-template-columns: 1fr 1fr;
-        }
-        .mc:nth-child(2) {
-          border-right: none;
-        }
-        .mc:nth-child(3) {
-          border-left: none;
-        }
-        .cd-box {
-          width: 68px;
-          height: 66px;
-          font-size: 28px;
-        }
-        .leaders {
-          grid-template-columns: 1fr 1fr;
-        }
-        .hods {
-          grid-template-columns: 1fr 1fr;
-        }
+      @media (max-width:560px) {
+        .hero { padding:120px 22px 80px; }
+        .hero-title { letter-spacing:-1.5px; }
+        .fc-meta { grid-template-columns:1fr 1fr; }
+        .mc:nth-child(2) { border-right:none; }
+        .mc:nth-child(3) { border-left:none; }
+        .cd-box { width:68px;height:66px;font-size:28px; }
+        .leaders,.hods { grid-template-columns:1fr 1fr; }
       }
     </style>
   </head>
@@ -910,20 +358,10 @@
     <div class="bg-overlay"></div>
 
     <nav>
-      <a
-        href="#"
-        style="text-decoration: none; display: flex; align-items: center"
-      >
-        <img
-          id="nav-img"
-          src="./Graviless_White.png"
-          alt="Graviless"
-          style="height: 80px; width: auto; display: block"
-          onerror="
-            this.style.display = 'none';
-            document.getElementById('nav-fb').style.display = 'block';
-          "
-        />
+      <a href="#" style="text-decoration:none;display:flex;align-items:center">
+        <img id="nav-img" src="./Graviless_White.png" alt="Graviless"
+          style="height:80px;width:auto;display:block"
+          onerror="this.style.display='none';document.getElementById('nav-fb').style.display='block';" />
         <span id="nav-fb" class="nav-logo-fallback"></span>
       </a>
       <ul class="nav-links">
@@ -932,15 +370,8 @@
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#team">Team</a></li>
       </ul>
-      <button
-        class="nav-btn"
-        onclick="
-          window.open(
-            'https://www.roblox.com/communities/12869094/Graviless#!/about',
-            '_blank',
-          )
-        "
-      >
+      <button class="nav-btn"
+        onclick="window.open('https://www.roblox.com/communities/12869094/Graviless#!/about','_blank')">
         Staff Portal
       </button>
     </nav>
@@ -950,21 +381,14 @@
         <div class="live-dot"></div>
         Defy Gravity. Redefine Flight.
       </div>
-
-      <img
-        src="./Graviless Orange.png"
-        alt="Graviless"
-        style="height: 200px; width: auto; display: block"
-        onerror="this.style.display = 'none'"
-      />
-
+      <img src="./Graviless Orange.png" alt="Graviless"
+        style="height:200px;width:auto;display:block"
+        onerror="this.style.display='none'" />
       <p class="hero-sub">
-        Not a journey. Not a simulation. A complete shift in how flight
-        feels.<br />
+        Not a journey. Not a simulation. A complete shift in how flight feels.<br />
         Enter a cabin where gravity disappears, movement becomes effortless, and
         every second challenges what you thought was possible.
       </p>
-
 
       <div class="nf-wrap" id="flights">
         <div class="eyebrow">Next Scheduled Flight</div>
@@ -984,22 +408,10 @@
             </div>
           </div>
           <div class="fc-meta">
-            <div class="mc">
-              <div class="mc-lbl">Departs</div>
-              <div class="mc-val ac" id="dep-time">—:—</div>
-            </div>
-            <div class="mc">
-              <div class="mc-lbl">Date</div>
-              <div class="mc-val" id="dep-date">—</div>
-            </div>
-            <div class="mc">
-              <div class="mc-lbl">Aircraft</div>
-              <div class="mc-val" id="aircraft">—</div>
-            </div>
-            <div class="mc">
-              <div class="mc-lbl">Host</div>
-              <div class="mc-val" id="host">—</div>
-            </div>
+            <div class="mc"><div class="mc-lbl">Departs</div><div class="mc-val ac" id="dep-time">—:—</div></div>
+            <div class="mc"><div class="mc-lbl">Date</div><div class="mc-val" id="dep-date">—</div></div>
+            <div class="mc"><div class="mc-lbl">Aircraft</div><div class="mc-val" id="aircraft">—</div></div>
+            <div class="mc"><div class="mc-lbl">Host</div><div class="mc-val" id="host">—</div></div>
           </div>
         </div>
       </div>
@@ -1007,25 +419,13 @@
       <div class="cd-wrap">
         <div class="eyebrow">Time Until Next Departure</div>
         <div class="cd-row">
-          <div class="cd-unit">
-            <div class="cd-box" id="cd-d">--</div>
-            <div class="cd-lbl">Days</div>
-          </div>
+          <div class="cd-unit"><div class="cd-box" id="cd-d">--</div><div class="cd-lbl">Days</div></div>
           <div class="cd-sep">:</div>
-          <div class="cd-unit">
-            <div class="cd-box" id="cd-h">--</div>
-            <div class="cd-lbl">Hours</div>
-          </div>
+          <div class="cd-unit"><div class="cd-box" id="cd-h">--</div><div class="cd-lbl">Hours</div></div>
           <div class="cd-sep">:</div>
-          <div class="cd-unit">
-            <div class="cd-box" id="cd-m">--</div>
-            <div class="cd-lbl">Min</div>
-          </div>
+          <div class="cd-unit"><div class="cd-box" id="cd-m">--</div><div class="cd-lbl">Min</div></div>
           <div class="cd-sep">:</div>
-          <div class="cd-unit">
-            <div class="cd-box" id="cd-s">--</div>
-            <div class="cd-lbl">Sec</div>
-          </div>
+          <div class="cd-unit"><div class="cd-box" id="cd-s">--</div><div class="cd-lbl">Sec</div></div>
         </div>
       </div>
 
@@ -1052,26 +452,11 @@
             It's an experience designed to push beyond gravity itself.
           </p>
         </div>
-
         <div class="stats-block reveal">
-          <div class="sc">
-            <div class="sn">0<sup>G</sup></div>
-            <div class="sd">Zero gravity in every flight</div>
-          </div>
-          <!-- ✅ ตัวเลขนี้ดึงมาจาก Google Sheets อัตโนมัติ -->
-          <div class="sc">
-            <div class="sn loading-pulse" id="stat-flights">—</div>
-            <div class="sd">Flights operated</div>
-          </div>
-          <!-- ✅ ตัวเลขนี้ดึงมาจาก Google Sheets อัตโนมัติ -->
-          <div class="sc">
-            <div class="sn loading-pulse" id="stat-crew">—</div>
-            <div class="sd">Certified crew members</div>
-          </div>
-          <div class="sc">
-            <div class="sn">∞</div>
-            <div class="sd">Gravity defied</div>
-          </div>
+          <div class="sc"><div class="sn">0<sup>G</sup></div><div class="sd">Zero gravity in every flight</div></div>
+          <div class="sc"><div class="sn loading-pulse" id="stat-flights">—</div><div class="sd">Flights operated</div></div>
+          <div class="sc"><div class="sn loading-pulse" id="stat-crew">—</div><div class="sd">Certified crew members</div></div>
+          <div class="sc"><div class="sn">∞</div><div class="sd">Gravity defied</div></div>
         </div>
       </div>
     </section>
@@ -1079,109 +464,60 @@
 
     <section class="sched-sec" id="schedule">
       <h2 class="sec-title reveal">Flight <span>Schedule</span></h2>
-      <div style="margin-top: 36px">
+      <div style="margin-top:36px">
         <div class="sched-list" id="sched-list">
-          <div class="sempty">Connecting to Trello…</div>
+          <div class="sempty">Connecting…</div>
         </div>
       </div>
     </section>
     <hr class="rule" />
 
-    <!-- ═══════ TEAM ═══════ -->
     <section class="team-sec" id="team">
       <div class="team-inner">
         <div class="team-hdr reveal">
           <div class="tag">The Crew</div>
           <h2 class="sec-title">Meet the <span>Team</span></h2>
         </div>
-
         <div class="leaders">
           <div class="tc reveal">
             <div class="ta">
-              <img
-                src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B7D55DD28074C3455271E728D98155B6-Png/420/420/AvatarHeadshot/Png/noFilter"
-                alt="Guest923761"
-                onload="this.classList.add('loaded')"
-                onerror="this.style.display = 'none'"
-              />
+              <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B7D55DD28074C3455271E728D98155B6-Png/420/420/AvatarHeadshot/Png/noFilter"
+                alt="Guest923761" onload="this.classList.add('loaded')" onerror="this.style.display='none'" />
             </div>
             <div class="tn">Guest</div>
             <div class="tr">Founder &amp; Developer</div>
             <div class="tu">@Guest923761</div>
           </div>
-          <div class="tc reveal" style="--delay: 0.06s">
-            <div
-              class="ta"
-              style="background: linear-gradient(135deg, #1e3a8a, #3b5fd4)"
-            >
-              <img
-                src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-CBB9F99B4EDEA755D4E7904EDAA0E0B9-Png/150/150/AvatarHeadshot/Webp/noFilter"
-                alt="WOLFBOY172018"
-                onload="this.classList.add('loaded')"
-                onerror="this.style.display = 'none'"
-              />
+          <div class="tc reveal" style="--delay:0.06s">
+            <div class="ta" style="background:linear-gradient(135deg,#1e3a8a,#3b5fd4)">
+              <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-CBB9F99B4EDEA755D4E7904EDAA0E0B9-Png/150/150/AvatarHeadshot/Webp/noFilter"
+                alt="WOLFBOY172018" onload="this.classList.add('loaded')" onerror="this.style.display='none'" />
             </div>
             <div class="tn">WilliamAfton560</div>
             <div class="tr">Chief Executive Officer</div>
             <div class="tu">@WOLFBOY172018</div>
           </div>
-          <div class="tc reveal" style="--delay: 0.12s">
-            <div
-              class="ta"
-              style="background: linear-gradient(135deg, #7c2000, #f07040)"
-            >
-              N/A
-            </div>
-            <div class="tn">N/A</div>
-            <div class="tr">Chief Staff Officer</div>
-            <div class="tu">N/A</div>
+          <div class="tc reveal" style="--delay:0.12s">
+            <div class="ta" style="background:linear-gradient(135deg,#7c2000,#f07040)">N/A</div>
+            <div class="tn">N/A</div><div class="tr">Chief Staff Officer</div><div class="tu">N/A</div>
           </div>
-          <div class="tc reveal" style="--delay: 0.18s">
-            <div
-              class="ta"
-              style="background: linear-gradient(135deg, #1a2b6e, #5566cc)"
-            >
-              N/A
-            </div>
-            <div class="tn">N/A</div>
-            <div class="tr">Chief Operating Officer</div>
-            <div class="tu">N/A</div>
+          <div class="tc reveal" style="--delay:0.18s">
+            <div class="ta" style="background:linear-gradient(135deg,#1a2b6e,#5566cc)">N/A</div>
+            <div class="tn">N/A</div><div class="tr">Chief Operating Officer</div><div class="tu">N/A</div>
           </div>
         </div>
-
         <div class="hods">
-          <div class="tc reveal" style="--delay: 0.06s">
-            <div
-              class="ta"
-              style="background: linear-gradient(135deg, #0a4a2e, #1a9a5e)"
-            >
-              N/A
-            </div>
-            <div class="tn">N/A</div>
-            <div class="tr">Head of Flight Deck</div>
-            <div class="tu">N/A</div>
+          <div class="tc reveal" style="--delay:0.06s">
+            <div class="ta" style="background:linear-gradient(135deg,#0a4a2e,#1a9a5e)">N/A</div>
+            <div class="tn">N/A</div><div class="tr">Head of Flight Deck</div><div class="tu">N/A</div>
           </div>
-          <div class="tc reveal" style="--delay: 0.12s">
-            <div
-              class="ta"
-              style="background: linear-gradient(135deg, #2a0a4e, #7b3fff)"
-            >
-              N/A
-            </div>
-            <div class="tn">N/A</div>
-            <div class="tr">Head of Flight Crew</div>
-            <div class="tu">N/A</div>
+          <div class="tc reveal" style="--delay:0.12s">
+            <div class="ta" style="background:linear-gradient(135deg,#2a0a4e,#7b3fff)">N/A</div>
+            <div class="tn">N/A</div><div class="tr">Head of Flight Crew</div><div class="tu">N/A</div>
           </div>
-          <div class="tc reveal" style="--delay: 0.18s">
-            <div
-              class="ta"
-              style="background: linear-gradient(135deg, #1a2040, #2255aa)"
-            >
-              N/A
-            </div>
-            <div class="tn">N/A</div>
-            <div class="tr">Head of Ground Crew</div>
-            <div class="tu">N/A</div>
+          <div class="tc reveal" style="--delay:0.18s">
+            <div class="ta" style="background:linear-gradient(135deg,#1a2040,#2255aa)">N/A</div>
+            <div class="tn">N/A</div><div class="tr">Head of Ground Crew</div><div class="tu">N/A</div>
           </div>
         </div>
       </div>
@@ -1189,63 +525,37 @@
 
     <footer>
       <div>
-        <img
-          src="./Graviless_White.png"
-          alt="Graviless"
-          style="height: 100px; opacity: 0.65"
-          onerror="
-            this.outerHTML =
-              '<span style=\'font-family:Bricolage Grotesque,sans-serif;font-weight:800;font-size:15px;color:#fff;opacity:.65\'>Gravi<span style=\'color:var(--orange)\'>less</span></span>'
-          "
-        />
+        <img src="./Graviless_White.png" alt="Graviless" style="height:100px;opacity:0.65"
+          onerror="this.outerHTML='<span style=\'font-family:Bricolage Grotesque,sans-serif;font-weight:800;font-size:15px;color:#fff;opacity:.65\'>Gravi<span style=\'color:var(--orange)\'>less</span></span>'" />
       </div>
       <div class="fcopy">© 2026 Graviless Airline · Roblox Experience</div>
       <div class="flinks">
         <a href="#home">Go To Top</a>
-        <a href="https://discord.com/invite/yS5vy7dzCG" target="_blank"
-          >Discord</a
-        >
-        <a
-          href="https://www.roblox.com/communities/12869094/Graviless"
-          target="_blank"
-          >Roblox Group</a
-        >
+        <a href="https://discord.com/invite/yS5vy7dzCG" target="_blank">Discord</a>
+        <a href="https://www.roblox.com/communities/12869094/Graviless" target="_blank">Roblox Group</a>
       </div>
     </footer>
 
     <script>
-      const BG_IMAGES = [
-        "./BG/1.jpg",
-        "./BG/2.jpg",
-        "./BG/3.jpg",
-        "./BG/4.jpg",
-        "./BG/5.jpg",
-        "./BG/6.jpg",
-        "./BG/7.jpg",
-        "./BG/8.jpg",
-        "./BG/9.jpg",
-        "./BG/10.jpg",
-        "./BG/11.jpg",
-      ];
+      const PROXY_BASE = "https://graviless-proxy.gravilessholder.workers.dev/";
 
+      const GSHEET_CSV_URL =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCrpoLm7IAmcw9lkg1-Y7QFAiJriT-gVCVsk-pf2ifu-gLOi6uN7g1ovPbxa2-JkX6Z407Y6zId1RW/pub?gid=0&single=true&output=csv";
+      const BG_IMAGES = [
+        "./BG/1.jpg","./BG/2.jpg","./BG/3.jpg","./BG/4.jpg",
+        "./BG/5.jpg","./BG/6.jpg","./BG/7.jpg","./BG/8.jpg",
+        "./BG/9.jpg","./BG/10.jpg","./BG/11.jpg",
+      ];
       const BG_INTERVAL = 6000;
-      const BG_FADE = 1800;
 
       (function initSlideshow() {
         if (!BG_IMAGES.length) return;
         const elA = document.getElementById("bg-a");
         const elB = document.getElementById("bg-b");
-        let cur = 0,
-          useA = true;
-
+        let cur = 0, useA = true;
         function preload(url) {
-          return new Promise((res) => {
-            const img = new Image();
-            img.onload = img.onerror = res;
-            img.src = url;
-          });
+          return new Promise(res => { const img = new Image(); img.onload = img.onerror = res; img.src = url; });
         }
-
         function showSlide(idx) {
           const url = BG_IMAGES[idx % BG_IMAGES.length];
           const incoming = useA ? elA : elB;
@@ -1257,73 +567,36 @@
             useA = !useA;
           });
         }
-
         showSlide(cur);
-
-        setInterval(() => {
-          cur = (cur + 1) % BG_IMAGES.length;
-          showSlide(cur);
-        }, BG_INTERVAL);
+        setInterval(() => { cur = (cur + 1) % BG_IMAGES.length; showSlide(cur); }, BG_INTERVAL);
       })();
 
-      const GSHEET_CSV_URL =
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCrpoLm7IAmcw9lkg1-Y7QFAiJriT-gVCVsk-pf2ifu-gLOi6uN7g1ovPbxa2-JkX6Z407Y6zId1RW/pub?gid=0&single=true&output=csv";
-
       async function fetchSheetStats() {
-        if (!GSHEET_CSV_URL) {
-
-          setStatValue("stat-flights", "0");
-          setStatValue("stat-crew", "0");
-          return;
-        }
+        if (!GSHEET_CSV_URL) { setStatValue("stat-flights","0"); setStatValue("stat-crew","0"); return; }
         try {
-
-          const url = GSHEET_CSV_URL + "&_t=" + Date.now();
-          const res = await fetch(url);
-          if (!res.ok) throw new Error("Sheet fetch failed: " + res.status);
+          const res = await fetch(GSHEET_CSV_URL + "&_t=" + Date.now());
+          if (!res.ok) throw new Error("Sheet " + res.status);
           const csv = await res.text();
-
-          const rows = csv
-            .trim()
-            .split("\n")
-            .map((r) =>
-              r.split(",").map((c) => c.replace(/^"|"$/g, "").trim()),
-            );
-
-          rows.forEach((cols) => {
-            const label = (cols[0] || "").toLowerCase();
-            const val = (cols[1] || "").replace(/[^0-9]/g, ""); 
-            if (
-              label.includes("flights operated") ||
-              label.includes("flight")
-            ) {
-              setStatValue("stat-flights", val || "0");
-            }
-            if (label.includes("certified crew") || label.includes("crew")) {
-              setStatValue("stat-crew", val || "0");
-            }
+          const rows = csv.trim().split("\n").map(r => r.split(",").map(c => c.replace(/^"|"$/g,"").trim()));
+          rows.forEach(cols => {
+            const label = (cols[0]||"").toLowerCase();
+            const val = (cols[1]||"").replace(/[^0-9]/g,"");
+            if (label.includes("flights operated")||label.includes("flight")) setStatValue("stat-flights", val||"0");
+            if (label.includes("certified crew")||label.includes("crew"))    setStatValue("stat-crew",    val||"0");
           });
-        } catch (e) {
-          console.error("[Graviless] Google Sheet error:", e);
-          setStatValue("stat-flights", "0");
-          setStatValue("stat-crew", "0");
+        } catch(e) {
+          console.error("[Graviless] Sheet error:", e);
+          setStatValue("stat-flights","0"); setStatValue("stat-crew","0");
         }
       }
-
       function setStatValue(id, val) {
         const el = document.getElementById(id);
         if (!el) return;
         el.textContent = val;
         el.classList.remove("loading-pulse");
       }
-
       fetchSheetStats();
       setInterval(fetchSheetStats, 5 * 60 * 1000);
-
-      const TRELLO_KEY = "f1b6c262d5ab7eebe9e414b62e11a0e0";
-      const TRELLO_TOKEN =
-        "ATTAc03444cbfc80d91f8c21fcc42f904f7a7a49c5c47e9335c70b838ba60f10b2972E600F2B";
-      const TRELLO_BOARD = "BQadYwvR";
 
       const LIST_STATUS = {
         "Scheduled Flights": "upcoming",
@@ -1331,35 +604,20 @@
         "Cancelled Flights": "cancelled",
       };
 
-
       let _target = null;
       function tick() {
-        if (!_target) {
-          ["cd-d", "cd-h", "cd-m", "cd-s"].forEach((id) => setBox(id, "--"));
-          return;
-        }
+        if (!_target) { ["cd-d","cd-h","cd-m","cd-s"].forEach(id => setBox(id,"--")); return; }
         let d = _target - Date.now();
-        if (d <= 0) {
-          ["cd-d", "cd-h", "cd-m", "cd-s"].forEach((id) => setBox(id, "00"));
-          return;
-        }
-        const days = Math.floor(d / 86400000);
-        d %= 86400000;
-        const hrs = Math.floor(d / 3600000);
-        d %= 3600000;
-        const mins = Math.floor(d / 60000);
-        d %= 60000;
-        const secs = Math.floor(d / 1000);
-        setBox("cd-d", days);
-        setBox("cd-h", hrs);
-        setBox("cd-m", mins);
-        setBox("cd-s", secs);
+        if (d <= 0) { ["cd-d","cd-h","cd-m","cd-s"].forEach(id => setBox(id,"00")); return; }
+        const days = Math.floor(d/86400000); d %= 86400000;
+        const hrs  = Math.floor(d/3600000);  d %= 3600000;
+        const mins = Math.floor(d/60000);    d %= 60000;
+        const secs = Math.floor(d/1000);
+        setBox("cd-d",days); setBox("cd-h",hrs); setBox("cd-m",mins); setBox("cd-s",secs);
       }
       function setBox(id, val) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const str =
-          typeof val === "number" ? String(val).padStart(2, "0") : val;
+        const el = document.getElementById(id); if (!el) return;
+        const str = typeof val==="number" ? String(val).padStart(2,"0") : val;
         if (el.textContent !== str) {
           el.textContent = str;
           el.classList.add("flash");
@@ -1369,95 +627,65 @@
       setInterval(tick, 1000);
 
       async function fetchFlights() {
-        if (!TRELLO_KEY || !TRELLO_TOKEN || !TRELLO_BOARD) {
-          setStatus("err", "No config");
+        if (!PROXY_BASE || PROXY_BASE.includes("YOUR-NAME")) {
+          setStatus("err","Proxy not configured");
           renderSched([]);
           return;
         }
-        setStatus("loading", "Loading…");
+        setStatus("loading","Loading…");
         try {
-          const lr = await fetch(
-            `https://api.trello.com/1/boards/${TRELLO_BOARD}/lists?key=${TRELLO_KEY}&token=${TRELLO_TOKEN}`,
-          );
-          if (!lr.ok) throw new Error(`Lists HTTP ${lr.status}`);
-          const lists = await lr.json();
-          const idSt = {};
-          lists.forEach((l) => {
-            const s = LIST_STATUS[l.name.trim()];
-            if (s) idSt[l.id] = s;
-          });
+          const res = await fetch(PROXY_BASE + "/flights");
+          if (!res.ok) throw new Error("Proxy HTTP " + res.status);
+          const { lists, cards } = await res.json();
 
-          const cr = await fetch(
-            `https://api.trello.com/1/boards/${TRELLO_BOARD}/cards?key=${TRELLO_KEY}&token=${TRELLO_TOKEN}`,
-          );
-          if (!cr.ok) throw new Error(`Cards HTTP ${cr.status}`);
-          const cards = await cr.json();
+          const idSt = {};
+          lists.forEach(l => { const s = LIST_STATUS[l.name.trim()]; if (s) idSt[l.id] = s; });
 
           const flights = cards
-            .map((c) => parseCard(c, idSt))
+            .map(c => parseCard(c, idSt))
             .filter(Boolean)
-            .sort((a, b) => (!a.dt ? 1 : !b.dt ? -1 : a.dt - b.dt));
+            .sort((a,b) => (!a.dt ? 1 : !b.dt ? -1 : a.dt - b.dt));
 
           const now = Date.now();
-          const next = flights.find(
-            (f) => f.st === "upcoming" && f.dt && f.dt > now,
-          );
-
-          if (next) {
-            showNext(next);
-          } else {
-            setStatus("err", "No upcoming flight");
-          }
+          const next = flights.find(f => f.st==="upcoming" && f.dt && f.dt > now);
+          if (next) showNext(next);
+          else setStatus("err","No upcoming flight");
 
           renderSched(flights);
-        } catch (e) {
-          console.error("[Graviless] Trello error:", e);
-          setStatus("err", "Connection error");
+        } catch(e) {
+          console.error("[Graviless] Proxy error:", e);
+          setStatus("err","Connection error");
           renderSched([]);
         }
       }
 
       function parseCard(card, idSt) {
         if (!card.name.includes("|")) return null;
-        const st = idSt[card.idList];
-        if (!st) return null;
-        const p = card.name.split("|").map((s) => s.trim());
-        const fn = p[0] || "GVL?";
+        const st = idSt[card.idList]; if (!st) return null;
+        const p = card.name.split("|").map(s => s.trim());
+        const fn  = p[0] || "GVL?";
         const hub = p[1] || "—";
-        const ac =
-          (card.name.match(/Aircraft:\s*([^|]+)/i) || [])[1]?.trim() || "—";
-        const hst =
-          (card.name.match(/Host:\s*([^|]+)/i) || [])[1]?.trim() || "—";
+        const ac  = (card.name.match(/Aircraft:\s*([^|]+)/i)||[])[1]?.trim() || "—";
+        const hst = (card.name.match(/Host:\s*([^|]+)/i)||[])[1]?.trim()     || "—";
         const desc = card.desc || "";
-        const ds = (desc.match(/DATE:\s*(\d{4}-\d{2}-\d{2})/i) || [])[1];
-        const ts = (desc.match(/TIME:\s*(\d{1,2}:\d{2})/i) || [])[1] || "00:00";
+        const ds = (desc.match(/DATE:\s*(\d{4}-\d{2}-\d{2})/i)||[])[1];
+        const ts = (desc.match(/TIME:\s*(\d{1,2}:\d{2})/i)||[])[1] || "00:00";
         const dt = ds ? new Date(`${ds}T${ts}:00Z`) : null;
         return { fn, hub, ac, hst, dt, st };
       }
 
       function showNext(f) {
-        setStatus("ok", "On Schedule");
-        const code = f.hub.replace(/\s/g, "").substring(0, 4).toUpperCase();
-        document.getElementById("dep-code").textContent = code;
+        setStatus("ok","On Schedule");
+        document.getElementById("dep-code").textContent = f.hub.replace(/\s/g,"").substring(0,4).toUpperCase();
         document.getElementById("dep-name").textContent = f.hub;
-        document.getElementById("fnum").textContent = f.fn;
+        document.getElementById("fnum").textContent     = f.fn;
         document.getElementById("aircraft").textContent = f.ac;
-        document.getElementById("host").textContent = f.hst;
+        document.getElementById("host").textContent     = f.hst;
         if (f.dt) {
           document.getElementById("dep-time").textContent =
-            f.dt.toLocaleTimeString("en-US", {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false,
-              timeZone: "UTC",
-            }) + " UTC";
+            f.dt.toLocaleTimeString("en-US",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"UTC"}) + " UTC";
           document.getElementById("dep-date").textContent =
-            f.dt.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-              timeZone: "UTC",
-            });
+            f.dt.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"UTC"});
           _target = f.dt.getTime();
           tick();
         }
@@ -1465,80 +693,44 @@
 
       function setStatus(type, text) {
         const pill = document.getElementById("status-pill");
-        pill.className =
-          "status-pill" +
-          (type === "loading" ? " loading" : type === "err" ? " err" : "");
+        pill.className = "status-pill" + (type==="loading"?" loading":type==="err"?" err":"");
         document.getElementById("status-txt").textContent = text;
       }
 
       function renderSched(flights) {
         const list = document.getElementById("sched-list");
-        if (!flights.length) {
-          list.innerHTML = '<div class="sempty">No flights found</div>';
-          return;
-        }
+        if (!flights.length) { list.innerHTML = '<div class="sempty">No flights found</div>'; return; }
         const now = Date.now();
-        const nextFn = flights.find(
-          (f) => f.st === "upcoming" && f.dt && f.dt > now,
-        )?.fn;
-        list.innerHTML = flights
-          .map((f) => {
-            const tm = f.dt
-              ? f.dt.toLocaleTimeString("en-US", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                  timeZone: "UTC",
-                }) + " UTC"
-              : "—";
-            const dt = f.dt
-              ? f.dt.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                  timeZone: "UTC",
-                })
-              : "TBD";
-            const cls =
-              f.st === "completed"
-                ? "is-done"
-                : f.fn === nextFn
-                  ? "is-next"
-                  : "";
-            return `<div class="srow ${cls}">
-          <div class="sl">
-            <div class="sfn">${f.fn}</div>
-            <div><div class="sroute">${f.hub} ↔ ${f.hub}</div><div class="sac">${f.ac} · Host: ${f.hst}</div></div>
-          </div>
-          <div class="sr">
-            <div class="stc"><div class="stime">${tm}</div><div class="sdate">${dt}</div></div>
-            <div class="stag ${f.st}">${cap(f.st)}</div>
-          </div>
-        </div>`;
-          })
-          .join("");
+        const nextFn = flights.find(f => f.st==="upcoming" && f.dt && f.dt > now)?.fn;
+        list.innerHTML = flights.map(f => {
+          const tm = f.dt
+            ? f.dt.toLocaleTimeString("en-US",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"UTC"}) + " UTC"
+            : "—";
+          const dt = f.dt
+            ? f.dt.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"UTC"})
+            : "TBD";
+          const cls = f.st==="completed" ? "is-done" : f.fn===nextFn ? "is-next" : "";
+          return `<div class="srow ${cls}">
+            <div class="sl">
+              <div class="sfn">${f.fn}</div>
+              <div><div class="sroute">${f.hub} ↔ ${f.hub}</div><div class="sac">${f.ac} · Host: ${f.hst}</div></div>
+            </div>
+            <div class="sr">
+              <div class="stc"><div class="stime">${tm}</div><div class="sdate">${dt}</div></div>
+              <div class="stag ${f.st}">${cap(f.st)}</div>
+            </div>
+          </div>`;
+        }).join("");
         triggerReveal();
       }
 
-      function cap(s) {
-        return s.charAt(0).toUpperCase() + s.slice(1);
-      }
+      function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
       function triggerReveal() {
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("vis");
-                io.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.07 },
-        );
-        document
-          .querySelectorAll(".reveal:not(.vis)")
-          .forEach((el) => io.observe(el));
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("vis"); io.unobserve(e.target); } });
+        }, { threshold: 0.07 });
+        document.querySelectorAll(".reveal:not(.vis)").forEach(el => io.observe(el));
       }
 
       fetchFlights();
